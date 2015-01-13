@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Player;
+namespace Lifeinthecloud\VideoPlayerBundle\Player;
 
 /**
  * Class VideoPlayer Player Flash
@@ -14,7 +14,7 @@ namespace Lifeinthecloud\VideoPlayer\Player;
  * @subpackage  Hoa_VideoPlayer_Player_Flash
  */
 
-class Hoa_VideoPlayer_Player_Flash extends Hoa_VideoPlayer_Player_Abstract {
+class Flash extends AbstractPlayer {
 
     /**
      * Nom du player

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer;
+namespace Lifeinthecloud\VideoPlayerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

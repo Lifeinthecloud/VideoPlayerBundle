@@ -1,8 +1,8 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Parser;
+namespace Lifeinthecloud\VideoPlayerBundle\Parser;
 
-use Lifeinthecloud\VideoPlayer\Exception\VideoPlayerException;
+use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
 
 /**
  * Class ParserAbstract

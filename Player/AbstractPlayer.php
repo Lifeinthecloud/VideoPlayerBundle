@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Player;
+namespace Lifeinthecloud\VideoPlayerBundle\Player;
 
 /**
  * Class VideoPlayer Player Abstract
@@ -14,7 +14,7 @@ namespace Lifeinthecloud\VideoPlayer\Player;
  * @subpackage  Hoa_VideoPlayer_Player_Abstract
  */
 
-abstract class VideoPlayer_Player_Abstract {
+abstract class AbstractPlayer {
 
     /**
      * __tostring
@@ -37,7 +37,7 @@ abstract class VideoPlayer_Player_Abstract {
 
         $this->param = self::arrayMergeRecursive($this->param, $param);
 
-        if (is_null(self::$this->param['url']) OR !is_string(self::$this->param['url']))
+        if (is_null($this->param['url']) OR !is_string($this->param['url']))
             throw new Hoa_VideoPlayer_Exception('Variable url could be a string.', 2);
     }
 

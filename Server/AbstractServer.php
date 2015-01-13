@@ -1,8 +1,8 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Server;
+namespace Lifeinthecloud\VideoPlayerBundle\Server;
 
-use Lifeinthecloud\VideoPlayer\Exception\VideoPlayerException;
+use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
 
 /**
  * Class VideoPlayer Server Abstract
@@ -31,7 +31,7 @@ abstract class AbstractServer {
 
         $this->param = self::arrayMergeRecursive($this->param, $param); 
 
-        if (is_null(self::$this->param['url']) OR !is_string(self::$this->param['url']))
+        if (is_null($this->param['url']) OR !is_string($this->param['url']))
             throw new VideoPlayerException('Variable url could be a string.', 2);
 
         if (is_null(self::getId()) OR !is_string(self::getId()))

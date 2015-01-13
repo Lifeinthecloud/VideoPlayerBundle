@@ -1,8 +1,8 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Server;
+namespace Lifeinthecloud\VideoPlayerBundle\Server;
 
-use Lifeinthecloud\VideoPlayer\Server\AbstractServer;
+use Lifeinthecloud\VideoPlayerBundle\Server\AbstractServer;
 
 /**
  * Class VideoPlayer Server Vimeo

@@ -1,9 +1,9 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Parser;
+namespace Lifeinthecloud\VideoPlayerBundle\Parser;
 
-use Lifeinthecloud\VideoPlayer\Parser\AbstractParser;
-use Lifeinthecloud\VideoPlayer\Exception\VideoPlayerException;
+use Lifeinthecloud\VideoPlayerBundle\Parser\AbstractParser;
+use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
 
 /**
  * Class Youtube
@@ -35,7 +35,7 @@ class YoutubeParser extends AbstractParser {
 
         $url = parse_url($this->url);
         parse_str($url['query'], $param);
-        $this->id = $this->param['v'];
+        $this->id = $param['v'];
         
         if (!$this->id)
             throw new VideoPlayerException('video id not found.', 1);

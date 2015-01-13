@@ -1,0 +1,5 @@
+services:
+    lifeinthecloud_keyword.service:
+        class: Lifeinthecloud\VideoPlayerBundle\Service\VideoPlayerService
+        arguments:
+            - @file_locator

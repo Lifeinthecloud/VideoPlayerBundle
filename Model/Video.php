@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Model;
+namespace Lifeinthecloud\VideoPlayerBundle\Model;
 
 class Video {
 

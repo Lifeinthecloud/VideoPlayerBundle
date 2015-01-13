@@ -1,8 +1,8 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Service;
+namespace Lifeinthecloud\VideoPlayerBundle\Service;
 
-use Lifeinthecloud\VideoPlayer\Exception\VideoPlayerException;
+use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
 
 /**
  * Class VideoPlayerBundle
@@ -177,7 +177,7 @@ class VideoPlayerService
 
         $this->param['player']['url'] = $this->server->getUrl();
 
-        $className = 'Lifeinthecloud\VideoPlayerBundle\Player\\'.self::getServerName().'Player';
+        $className = 'Lifeinthecloud\VideoPlayerBundle\Player\\'.self::getPlayerName();
         $this->player = new $className($this->param['player']);
     }
 
@@ -190,9 +190,7 @@ class VideoPlayerService
         /**
          * Hoa importation
          */
-        import('VideoPlayer.Parser.'.self::getServerName());
-
-        $className = 'Hoa_VideoPlayer_Parser_'.self::getServerName();
+        $className = 'Lifeinthecloud\VideoPlayerBundle\Parser\\'.self::getServerName().'Parser';
         $this->parser = new $className($this->param['parser']['url']);
 
         $this->param['server']['id'] = $this->parser->id;

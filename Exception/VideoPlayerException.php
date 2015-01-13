@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Exception;
+namespace Lifeinthecloud\VideoPlayerBundle\Exception;
 
 /**
  * Class Hoa_VideoPlayer_Exception.

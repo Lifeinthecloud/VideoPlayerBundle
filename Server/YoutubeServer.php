@@ -1,8 +1,8 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayer\Server;
+namespace Lifeinthecloud\VideoPlayerBundle\Server;
 
-use Lifeinthecloud\VideoPlayer\Server\AbstractServer;
+use Lifeinthecloud\VideoPlayerBundle\Server\AbstractServer;
 
 /**
  * Class VideoPlayer Server Youtube
@@ -16,7 +16,7 @@ use Lifeinthecloud\VideoPlayer\Server\AbstractServer;
  * @subpackage  YoutubeServer
  */
 
-class YoutubeServer extends ServerAbstract {
+class YoutubeServer extends AbstractServer {
 
     /**
      * Tableau des parametres par defaut
