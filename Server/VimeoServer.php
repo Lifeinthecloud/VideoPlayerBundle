@@ -16,7 +16,7 @@ use Lifeinthecloud\VideoPlayerBundle\Server\AbstractServer;
  * @subpackage  VimeoServer
  */
 
-class VimeoServer extends ServerAbstract {
+class VimeoServer extends AbstractServer {
 
     /**
      * Tableau des parametres par defaut

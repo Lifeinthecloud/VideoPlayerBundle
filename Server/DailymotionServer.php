@@ -16,7 +16,7 @@ use Lifeinthecloud\VideoPlayerBundle\Server\AbstractServer;
  * @subpackage  DailymotionServer
  */
 
-class DailymotionServer extends ServerAbstract {
+class DailymotionServer extends AbstractServer {
 
     /**
      * Tableau des parametres par defaut
