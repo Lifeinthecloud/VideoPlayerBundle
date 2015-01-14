@@ -18,53 +18,66 @@ use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
 class VideoPlayerService
 {
     /**
-     * Objet parser
+     * Object parser
      *
      * @var   object
      */
     public $parser = null;
 
     /**
-     * Objet serveur
+     * Object serveur
      *
      * @var   object
      */
     public $server = null;
 
     /**
-     * Objet Player
+     * Object Player
      *
      * @var   object
      */
     public $player = null;
 
     /**
-     * Tableau des parametres par defaut
+     * Array of parameters par default
      *
      * @var   array
      */
     public $param = array(
         'player' => array(
-            'player' => 'Flash',
-            'width' => 560,
-            'height' => 340,
-            'param' => array()
+            'player'    => 'Flash',
+            'width'     => 560,
+            'height'    => 340,
+            'param'     => array()
         ),
         'server' => array(
-            'server' => null,
-            'id' => null,
-            'param' => array()
+            'server'    => null,
+            'id'        => null,
+            'param'     => array()
         ),
         'parser' => array(
-            'url' => null
+            'url'       => null
         )
     );
 
     /**
-     * __construct
-     * Constructeur
+     * Construct video player
      *
-     * @param   $param    Tableau des parametres
+     * show example :
+     *
+     *     $param = array(
+     *         'server' => array(
+     *             'server' => 'youtube',
+     *             'id' => 'xxxx'
+     *          ),
+     *          'player' => array(
+     *              'width' => 800,
+     *              'height' => 500
+     *          )
+     *     );
+     *
+     * @param   $param    Array of parameters
+     * @throws VideoPlayerException
      */
     public function __construct ( $param=null )
     {
@@ -86,10 +99,9 @@ class VideoPlayerService
     }
 
     /**
-     * __tostring
-     * Affichage
+     * Show video player
      *
-     * @return   $param    Portion HTML
+     * @return string $param Portion HTML
      */
     public function __tostring ( )
     {
@@ -202,6 +214,7 @@ class VideoPlayerService
      *
      * @param   $array1   Tableau par defaut
      * @param   $array2   Tableau Secondaire
+     *
      * @return  Tableau fusionné
      */
     private function arrayMergeRecursive ( array &$array1, array &$array2 )
