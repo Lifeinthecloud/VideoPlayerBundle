@@ -17,20 +17,20 @@ namespace Lifeinthecloud\VideoPlayerBundle\Model;
 interface VideoInterface
 {
     /**
-     * Gets server.
+     * Gets video server.
      *
-     * @return Server
+     * @return VideoServer
      */
-    public function getServer();
+    public function getVideoServer();
 
     /**
-     * Sets the server.
+     * Sets the video server.
      *
-     * @param Server $server
+     * @param VideoServer $videoServer
      *
      * @return self
      */
-    public function setServer($server);
+    public function setVideoServer($videoServer);
 
     /**
      * Gets video id.

@@ -21,9 +21,9 @@ abstract class Video implements VideoInterface
     protected $id;
 
     /**
-     * @var Server
+     * @var VideoServer
      */
-    protected $server;
+    protected $videoServer;
 
     /**
      * @var string
