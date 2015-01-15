@@ -50,4 +50,14 @@ abstract class VideoServer implements VideoServerInterface
         return $this;
     }
 
+    /**
+     * Return the server name
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+
 }
