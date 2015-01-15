@@ -13,6 +13,9 @@ namespace Lifeinthecloud\VideoPlayerBundle\Entity;
 
 use Lifeinthecloud\VideoPlayerBundle\Model\VideoServer as AbstractServer;
 
+/**
+ * @author Antoine DARCHE <antoine.darche@gmail.com>
+ */
 abstract class VideoServer extends AbstractServer
 {
 }

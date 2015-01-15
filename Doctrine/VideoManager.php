@@ -17,6 +17,9 @@ use Lifeinthecloud\VideoPlayerBundle\Model\VideoManager as BaseVideoManager;
 use Lifeinthecloud\VideoPlayerBundle\Util\CanonicalizerInterface;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 
+/**
+ * @author Antoine DARCHE <antoine.darche@gmail.com>
+ */
 class VideoManager extends BaseVideoManager
 {
     protected $objectManager;

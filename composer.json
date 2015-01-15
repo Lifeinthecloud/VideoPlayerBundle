@@ -11,6 +11,12 @@
             "email": "darche.antoine@gmail.com",        
 			"homepage": "http://www.lifeinthecloud.fr",
             "role": "Developer"
+        },
+        {
+            "name": "Grégory DARCHE",
+            "email": "tetardo@gmail.com",
+			"homepage": "http://www.lifeinthecloud.fr",
+            "role": "Developer"
         }
     ],
     "require": {

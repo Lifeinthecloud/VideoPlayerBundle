@@ -13,6 +13,9 @@ namespace Lifeinthecloud\VideoPlayerBundle\Entity;
 
 use Lifeinthecloud\VideoPlayerBundle\Model\Video as AbstractVideo;
 
+/**
+ * @author Antoine DARCHE <antoine.darche@gmail.com>
+ */
 abstract class Video extends AbstractVideo
 {
 }

@@ -24,11 +24,9 @@ interface VideoManagerInterface
     /**
      * Returns an empty video instance.
      *
-     * @param string $name
-     *
      * @return VideoInterface
      */
-    public function createVideo($name);
+    public function createVideo();
 
     /**
      * Deletes a video.

@@ -9,12 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\UserBundle\Doctrine;
+namespace Lifeinthecloud\VideoPlayerBundle\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use FOS\UserBundle\Model\GroupInterface;
 use FOS\UserBundle\Model\GroupManager as BaseGroupManager;
 
+/**
+ * @author Antoine DARCHE <antoine.darche@gmail.com>
+ */
 class GroupManager extends BaseGroupManager
 {
     protected $objectManager;

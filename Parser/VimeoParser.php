@@ -8,7 +8,8 @@ use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
 /**
  * Class Vimeo
  *
- * @author      Antoine DARCHE <darche.antoine@gmail.com> & Grégory DARCHE <tetardo@gmail.com>
+ * @author Antoine DARCHE <antoine.darche@gmail.com>
+ * @author Grégory DARCHE <tetardo@gmail.com>
  * @copyright   Copyright (c) 2015 Lifeinthecloud.
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
