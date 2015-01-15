@@ -15,12 +15,54 @@ namespace Lifeinthecloud\VideoPlayerBundle\Exception;
  * @package     Lifeinthecloud\VideoPlayer\Parser
  * @subpackage  ParserAbstract
  */
-
-class VideoPlayerException extends \Exception {
+class VideoPlayerException extends \RuntimeException implements \Serializable {
 
     public function __construct ( $message=null, $code=0, $arg=array() ) {
 
         parent::__construct($message, $code);
+    }
+
+
+    public function serialize()
+    {
+        return serialize(array(
+            $this->token,
+            $this->code,
+            $this->message,
+            $this->file,
+            $this->line,
+        ));
+    }
+
+    public function unserialize($str)
+    {
+        list(
+            $this->token,
+            $this->code,
+            $this->message,
+            $this->file,
+            $this->line
+            ) = unserialize($str);
+    }
+
+    /**
+     * Message key to be used by the translation component.
+     *
+     * @return string
+     */
+    public function getMessageKey()
+    {
+        return 'An video player exception occurred.';
+    }
+
+    /**
+     * Message data to be used by the translation component.
+     *
+     * @return array
+     */
+    public function getMessageData()
+    {
+        return array();
     }
 
 }

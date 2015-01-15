@@ -79,7 +79,12 @@ class VideoPlayerService
      * @param   $param    Array of parameters
      * @throws VideoPlayerException
      */
-    public function __construct ( $param=null )
+    public function __construct (  )
+    {
+
+    }
+
+    public function play($param=null)
     {
         if (is_null($param) OR !is_array($param))
             throw new VideoPlayerException('Parameter could be an array.', 1);
@@ -95,7 +100,19 @@ class VideoPlayerService
         if (!is_null($this->param['parser']['url']) AND is_string($this->param['parser']['url']))
             self::parseInstance();
 
-        self::getInstance();
+        if (is_null($this->param['server']['id']) OR !is_string($this->param['server']['id']))
+            throw new VideoPlayerException('Variable serveur.id could be a string.', 4);
+
+        $className = 'Lifeinthecloud\VideoPlayerBundle\Server\\'.self::getServerName().'Server';
+        //$className = 'Hoa_VideoPlayer_Server_'.self::getServerName();
+        $this->server = new $className($this->param['server']);
+
+        $this->param['player']['url'] = $this->server->getUrl();
+
+        $className = 'Lifeinthecloud\VideoPlayerBundle\Player\\'.self::getPlayerName();
+        $this->player = new $className($this->param['player']);
+
+        return self::__toString();
     }
 
     /**
@@ -172,25 +189,6 @@ class VideoPlayerService
     public function getVideoUrl ( )
     {
         return $this->server->getUrl();
-    }
-
-    /**
-     * getInstance
-     * Initialise les objects server et player
-     */
-    private function getInstance ( )
-    {
-        if (is_null($this->param['server']['id']) OR !is_string($this->param['server']['id']))
-            throw new VideoPlayerException('Variable serveur.id could be a string.', 4);
-
-        $className = 'Lifeinthecloud\VideoPlayerBundle\Server\\'.self::getServerName().'Server';
-        //$className = 'Hoa_VideoPlayer_Server_'.self::getServerName();
-        $this->server = new $className($this->param['server']);
-
-        $this->param['player']['url'] = $this->server->getUrl();
-
-        $className = 'Lifeinthecloud\VideoPlayerBundle\Player\\'.self::getPlayerName();
-        $this->player = new $className($this->param['player']);
     }
 
     /**

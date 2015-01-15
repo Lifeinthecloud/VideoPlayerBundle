@@ -28,6 +28,11 @@ abstract class Video implements VideoInterface
     /**
      * @var string
      */
+    protected $title;
+
+    /**
+     * @var string
+     */
     protected $videoId;
 
     public function __construct()
@@ -44,6 +49,7 @@ abstract class Video implements VideoInterface
     public function serialize()
     {
         return serialize(array(
+            $this->title,
             $this->videoId,
             $this->id,
         ));
@@ -62,6 +68,7 @@ abstract class Video implements VideoInterface
         $data = array_merge($data, array_fill(0, 2, null));
 
         list(
+            $this->title,
             $this->videoId,
             $this->id,
          ) = $data;
@@ -113,6 +120,22 @@ abstract class Video implements VideoInterface
     public function setVideoId($videoId)
     {
         $this->videoId = $videoId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
     }
 
 }

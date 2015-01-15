@@ -12,7 +12,7 @@
 namespace Lifeinthecloud\VideoPlayerBundle\Model;
 
 /**
- * Abstract Video Server Manager implementation which can be used as base class for your
+ * Abstract Video server Manager implementation which can be used as base class for your
  * concrete manager.
  *
  * @author Antoine DARCHE <antoine.darche@gmail.com>
