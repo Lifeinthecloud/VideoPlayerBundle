@@ -34,9 +34,9 @@ class VideoManager extends BaseVideoManager
      * @param ObjectManager           $om
      * @param string                  $class
      */
-    public function __construct(EncoderFactoryInterface $encoderFactory, CanonicalizerInterface $videoCanonicalizer,ObjectManager $om, $class)
+    public function __construct(EncoderFactoryInterface $encoderFactory, ObjectManager $om, $class)
     {
-        parent::__construct($encoderFactory, $videoCanonicalizer);
+        parent::__construct($encoderFactory);
 
         $this->objectManager = $om;
         $this->repository = $om->getRepository($class);

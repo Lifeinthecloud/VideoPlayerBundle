@@ -34,11 +34,9 @@ abstract class VideoManager implements UserManagerInterface, UserProviderInterfa
      * @param CanonicalizerInterface  $titleCanonicalizer
      * @param CanonicalizerInterface  $videoIdCanonicalizer
      */
-    public function __construct(EncoderFactoryInterface $encoderFactory, CanonicalizerInterface $titleCanonicalizer, CanonicalizerInterface $videoIdCanonicalizer)
+    public function __construct(EncoderFactoryInterface $encoderFactory)
     {
         $this->encoderFactory = $encoderFactory;
-        $this->titleCanonicalizer = $titleCanonicalizer;
-        $this->emailCanonicalizer = $videoIdCanonicalizer;
     }
 
     /**
