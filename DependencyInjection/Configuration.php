@@ -49,10 +49,7 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()
                 ->scalarNode('video_class')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('firewall_name')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('model_manager_name')->defaultNull()->end()
-                ->booleanNode('use_listener')->defaultTrue()->end()
-                ->booleanNode('use_flash_notifications')->defaultTrue()->end()
                 ->booleanNode('use_title_form_type')->defaultTrue()->end()
             ->end();
 

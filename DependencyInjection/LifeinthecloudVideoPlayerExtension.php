@@ -44,10 +44,6 @@ class LifeinthecloudVideoPlayerExtension extends Extension
             $loader->load(sprintf('%s.yml', $basename));
         }
 
-        if ($config['use_flash_notifications']) {
-            $loader->load('flash_notifications.xml');
-        }
-
         $container->setAlias('lifeinthecloud_video_player.util.title_canonicalizer', $config['service']['title_canonicalizer']);
         $container->setAlias('lifeinthecloud_video_player.video_manager', $config['service']['video_manager']);
 
