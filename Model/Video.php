@@ -101,7 +101,7 @@ abstract class Video implements VideoInterface
     /**
      * @param VideoServer $videoServer
      */
-    public function setServer($videoServer)
+    public function setVideoServer($videoServer)
     {
         $this->videoServer = $videoServer;
     }
