@@ -14,7 +14,7 @@ namespace Lifeinthecloud\VideoPlayerBundle\Model;
 /**
  * @author Antoine DARCHE <antoine.darche@gmail.com>
  */
-interface ServerInterface
+interface VideoServerInterface
 {
     /**
      * @return integer

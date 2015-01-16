@@ -1,12 +1,7 @@
 Lifeinthecloud\VideoPlayerBundle\Entity\Video:
-    type: entity
+    type: mappedSuperclass
     repositoryClass: VideoRepository
     table: video
-    id:
-        id:
-            type: integer
-            generator:
-                strategy: AUTO
     fields:
         title:
             type: string
@@ -14,7 +9,7 @@ Lifeinthecloud\VideoPlayerBundle\Entity\Video:
             length: 255
             fixed: false
             comment: ''
-        video_id:
+        videoId:
             type: string
             nullable: true
             length: 255

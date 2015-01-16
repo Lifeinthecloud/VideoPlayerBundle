@@ -21,7 +21,7 @@ class LifeinthecloudVideoPlayerBundle extends Bundle
         parent::build($container);
         $container->addCompilerPass(new ValidationPass());
 
-        $this->addRegisterMappingsPass($container);
+        //$this->addRegisterMappingsPass($container);
     }
 
     /**
