@@ -35,6 +35,8 @@ class LifeinthecloudVideoPlayerExtension extends Extension
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
+        $loader->load('services.yml');
+
         if ('custom' !== $config['db_driver']) {
             $loader->load(sprintf('%s.yml', $config['db_driver']));
             $container->setParameter($this->getAlias() . '.backend_type_' . $config['db_driver'], true);
