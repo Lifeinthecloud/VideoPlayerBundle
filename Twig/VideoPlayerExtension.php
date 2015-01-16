@@ -5,6 +5,11 @@ namespace Lifeinthecloud\VideoPlayerBundle\Twig;
 use Lifeinthecloud\VideoPlayerBundle\Service\VideoPlayerService;
 use Lifeinthecloud\VideoPlayerBundle\Model\Video;
 
+/**
+ * Twig extension to embed the video directly in twig
+ *
+ * @author thibault.harel
+ */
 class VideoPlayerExtension extends \Twig_Extension
 {
 
