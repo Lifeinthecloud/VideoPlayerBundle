@@ -44,9 +44,6 @@ class LifeinthecloudVideoPlayerExtension extends Extension
             $loader->load(sprintf('%s.yml', $basename));
         }
 
-        $container->setAlias('lifeinthecloud_video_player.util.title_canonicalizer', $config['service']['title_canonicalizer']);
-        $container->setAlias('lifeinthecloud_video_player.video_manager', $config['service']['video_manager']);
-
         $this->remapParametersNamespaces($config, $container, array(
             '' => array(
                 'db_driver' => 'listener.storage',
