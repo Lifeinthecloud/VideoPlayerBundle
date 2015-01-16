@@ -40,7 +40,7 @@ class LifeinthecloudVideoPlayerExtension extends Extension
             $container->setParameter($this->getAlias() . '.backend_type_' . $config['db_driver'], true);
         }
 
-        foreach (array('validator', 'security', 'util') as $basename) {
+        foreach (array('validator', 'util') as $basename) {
             $loader->load(sprintf('%s.yml', $basename));
         }
 
