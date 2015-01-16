@@ -6,6 +6,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Lifeinthecloud\VideoPlayerBundle\DependencyInjection\Compiler\ValidationPass;
 use Lifeinthecloud\VideoPlayerBundle\DependencyInjection\Compiler\RegisterMappingsPass;
+use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 
 /**
  * Abstract Video server Manager implementation which can be used as base class for your
