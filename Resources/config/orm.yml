@@ -1,7 +1,7 @@
 services:
     lifeinthecloud_video_player.video_manager.default:
-        class: FOS\UserBundle\Doctrine\UserManager
-        arguments: ["security.encoder_factory, lifeinthecloud_video_player.util.title_canonicalizer, lifeinthecloud_video_player.entity_manager, @lifeinthecloud_video_player.model.video.class"]
+        class: Lifeinthecloud\VideoPlayerBundle\Doctrine\UserManager
+        arguments: ["security.encoder_factory", "lifeinthecloud_video_player.util.title_canonicalizer", "lifeinthecloud_video_player.entity_manager", "@lifeinthecloud_video_player.model.video.class"]
 
     lifeinthecloud_video_player.entity_manager:
-      arguments: [@lifeinthecloud_video_player.model_manager_name]
+      arguments: ["@lifeinthecloud_video_player.model_manager_name"]
