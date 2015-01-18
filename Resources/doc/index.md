@@ -1,9 +1,9 @@
-Getting Started With LifeinthecloudVideoPlayerBundle
+Getting Started With VideoPlayerBundle
 ====================================================
 
 The Symfony2 security component provides a flexible security framework that
 allows you to load videos from configuration, a database, or anywhere else
-you can imagine. The LifeinthecloudVideoPlayerBundle builds on top of this to make it quick
+you can imagine. The VideoPlayerBundle builds on top of this to make it quick
 and easy to store videos in a database.
 
 So, if you need to persist and fetch the videos in your system to and from
@@ -32,15 +32,15 @@ For more information about translations, check [Symfony documentation](http://sy
 
 Installation is a quick (I promise!) 7 step process:
 
-1. Download LifeinthecloudVideoPlayerBundle using composer
+1. Download VideoPlayerBundle using composer
 2. Enable the Bundle
 3. Create your Video class
-4. Configure the FOSUserBundle
+4. Configure the VideoPlayerBundle
 5. Update your database schema
 
-### Step 1: Download FOSUserBundle using composer
+### Step 1: Download VideoPlayerBundle using composer
 
-Add FOSUserBundle by running the command:
+Add VideoPlayerBundle by running the command:
 
 ``` bash
 $ php composer.phar require lifeinthecloud/video-player-bundle "dev-master"
@@ -68,9 +68,9 @@ public function registerBundles()
 ### Step 3: Create your Video class
 
 The goal of this bundle is to persist some `Video` class to a database (MySql,
-PostgreSql, ...). Your first job, then, is to create the `User` class
+PostgreSql, ...). Your first job, then, is to create the `Video` class
 for your application. This class can look and act however you want: add any
-properties or methods you find useful. This is *your* `User` class.
+properties or methods you find useful. This is *your* `Video` class.
 
 The bundle provides base classes which are already mapped for most fields
 to make it easier to create your entity. Here is how you use it:
