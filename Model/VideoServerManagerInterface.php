@@ -46,10 +46,10 @@ interface VideoServerManagerInterface
      *
      * @return VideoServerInterface
      */
-    public function findGroupBy(array $criteria);
+    public function findVideoServerBy(array $criteria);
 
     /**
-     * Finds a group by name.
+     * Finds a video server by name.
      *
      * @param string $name
      *
@@ -78,5 +78,5 @@ interface VideoServerManagerInterface
      *
      * @return void
      */
-    public function updateGroup(VideoServerInterface $videoServer);
+    public function updateVideoServer(VideoServerInterface $videoServer);
 }

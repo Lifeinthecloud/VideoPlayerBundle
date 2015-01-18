@@ -12,13 +12,13 @@
 namespace Lifeinthecloud\VideoPlayerBundle\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use FOS\UserBundle\Model\GroupInterface;
-use FOS\UserBundle\Model\GroupManager as BaseGroupManager;
+use Lifeinthecloud\VideoPlayerBundle\Model\VideoServerInterface;
+use Lifeinthecloud\VideoPlayerBundle\Model\VideoServerManager as BaseVideoServerManager;
 
 /**
  * @author Antoine DARCHE <antoine.darche@gmail.com>
  */
-class GroupManager extends BaseGroupManager
+class VideoServerManager extends BaseVideoServerManager
 {
     protected $objectManager;
     protected $class;
@@ -36,9 +36,9 @@ class GroupManager extends BaseGroupManager
     /**
      * {@inheritDoc}
      */
-    public function deleteGroup(GroupInterface $group)
+    public function deleteVideoServer(VideoServerInterface $videoServer)
     {
-        $this->objectManager->remove($group);
+        $this->objectManager->remove($videoServer);
         $this->objectManager->flush();
     }
 
@@ -53,7 +53,7 @@ class GroupManager extends BaseGroupManager
     /**
      * {@inheritDoc}
      */
-    public function findGroupBy(array $criteria)
+    public function findVideoServerBy(array $criteria)
     {
         return $this->repository->findOneBy($criteria);
     }
@@ -61,20 +61,20 @@ class GroupManager extends BaseGroupManager
     /**
      * {@inheritDoc}
      */
-    public function findGroups()
+    public function findVideoServers()
     {
         return $this->repository->findAll();
     }
 
     /**
-     * Updates a group
+     * Updates a video server
      *
-     * @param GroupInterface $group
+     * @param VideoServerInterface $videoServer
      * @param Boolean        $andFlush Whether to flush the changes (default true)
      */
-    public function updateGroup(GroupInterface $group, $andFlush = true)
+    public function updateVideoServer(VideoServerInterface $videoServer, $andFlush = true)
     {
-        $this->objectManager->persist($group);
+        $this->objectManager->persist($videoServer);
         if ($andFlush) {
             $this->objectManager->flush();
         }
