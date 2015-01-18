@@ -1,9 +1,9 @@
 VideoPlayerBundle
 =================
 
-The VideoPlayerBundle adds support for a database-backed user system in Symfony2.
+The VideoPlayerBundle adds support for a database-backed video system in Symfony2.
 It provides a flexible framework for video management that aims to handle
-common tasks such as video registration.
+common tasks such as reading from hosting websites videos: Youtube, Vimeo, Dailymotion.
 
 Documentation
 -------------

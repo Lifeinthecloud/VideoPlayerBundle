@@ -1,18 +1,18 @@
 Getting Started With VideoPlayerBundle
 ======================================
 
-The Symfony2 security component provides a flexible security framework that
+The Symfony2 component provides a flexible security framework that
 allows you to load videos from configuration, a database, or anywhere else
-you can imagine. The VideoPlayerBundle builds on top of this to make it quick
-and easy to store videos in a database.
+you can imagine. The VideoPlayerBundle builds on top of this to make itquick
+and easy to store data for reading videos Youtube, Vimeo or Dailymotion.
 
-So, if you need to persist and fetch the videos in your system to and from
-a database, then you're in the right place.
+So, if you need to persist and fetch the videos's data in your system to
+and from a database, then you're in the right place.
 
 ## Prerequisites
 
 This version of the bundle requires Symfony 2.1+. If you are using Symfony
-2.0.x, please use the 1.2.x releases of the bundle.
+2.0.x, please use the 1.0.x releases of the bundle.
 
 ### Translations
 
