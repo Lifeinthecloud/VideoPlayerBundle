@@ -1,7 +1,7 @@
 VideoPlayerBundle
 =================
 
-The LifeinthecloudVideoPlayerBundle adds support for a database-backed user system in Symfony2.
+The VideoPlayerBundle adds support for a database-backed user system in Symfony2.
 It provides a flexible framework for video management that aims to handle
 common tasks such as video registration.
 

@@ -182,7 +182,7 @@ Acme\VideoBundle\Entity\Video:
 ```
 
 
-### Step 4: Configure the LifeinthecloudVideoPlayerBundle
+### Step 4: Configure the VideoPlayerBundle
 
 The next step is to configure the bundle to work with the specific needs of
 your application.
