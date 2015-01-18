@@ -1,5 +1,5 @@
 Getting Started With VideoPlayerBundle
-====================================================
+======================================
 
 The Symfony2 security component provides a flexible security framework that
 allows you to load videos from configuration, a database, or anywhere else
