@@ -26,6 +26,7 @@ use Symfony\Component\Config\FileLocator;
  */
 class LifeinthecloudVideoPlayerExtension extends Extension
 {
+
     public function load(array $configs, ContainerBuilder $container)
     {
         $processor = new Processor();
@@ -33,7 +34,7 @@ class LifeinthecloudVideoPlayerExtension extends Extension
 
         $config = $processor->processConfiguration($configuration, $configs);
 
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
         $loader->load('services.yml');
 
@@ -80,4 +81,5 @@ class LifeinthecloudVideoPlayerExtension extends Extension
             }
         }
     }
+
 }

@@ -2,11 +2,10 @@
 
 namespace Lifeinthecloud\VideoPlayerBundle;
 
+use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Lifeinthecloud\VideoPlayerBundle\DependencyInjection\Compiler\ValidationPass;
-use Lifeinthecloud\VideoPlayerBundle\DependencyInjection\Compiler\RegisterMappingsPass;
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
+use Symfony\Component\DependencyInjection\Definition;
 
 /**
  * Abstract Video server Manager implementation which can be used as base class for your
@@ -16,28 +15,28 @@ use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappi
  */
 class LifeinthecloudVideoPlayerBundle extends Bundle
 {
+
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
-        $container->addCompilerPass(new ValidationPass());
-
-        //$this->addRegisterMappingsPass($container);
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    private function addRegisterMappingsPass(ContainerBuilder $container)
-    {
-        // the base class is only available since symfony 2.3
-        $symfonyVersion = class_exists('Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterMappingsPass');
-        $mappings = array(
-            realpath(__DIR__ . '/Resources/config/doctrine/model') => 'Lifeinthecloud\VideoPlayerBundle\Model',
-        );
-        if ($symfonyVersion && class_exists('Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass')) {
-            $container->addCompilerPass(DoctrineOrmMappingsPass::createXmlMappingDriver($mappings, array('lifeinthecloud_video_player.model_manager_name'), 'lifeinthecloud_video_player.backend_type_orm'));
-        } else {
-            $container->addCompilerPass(RegisterMappingsPass::createOrmMappingDriver($mappings));
+        $ormCompilerClass = 'Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass';
+        if (class_exists($ormCompilerClass)) {
+            $container->addCompilerPass($this->buildMappingCompilerPass());
         }
     }
+
+    private function buildMappingCompilerPass()
+    {
+        $arguments = array(array(realpath(__DIR__ . '/Resources/config/doctrine')), '.orm.yml');
+        $locator = new Definition('Doctrine\Common\Persistence\Mapping\Driver\DefaultFileLocator', $arguments);
+        $driver = new Definition('Doctrine\ORM\Mapping\Driver\YmlDriver', array($locator));
+
+        return new DoctrineOrmMappingsPass(
+            $driver,
+            array('Lifeinthecloud\VideoPlayerBundle'),
+            array('lifeinthecloud_video_player.video_manager.default'),
+            'LifeinthecloudVideoPlayerBundle.orm_enabled'
+        );
+    }
+
 }

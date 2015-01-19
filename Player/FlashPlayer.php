@@ -14,7 +14,7 @@ namespace Lifeinthecloud\VideoPlayerBundle\Player;
  * @subpackage  Hoa_VideoPlayer_Player_Flash
  */
 
-class Flash extends AbstractPlayer {
+class FlashPlayer extends AbstractPlayer {
 
     /**
      * Nom du player

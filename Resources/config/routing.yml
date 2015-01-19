@@ -1,3 +1,0 @@
-lifeinthecloud_video_player_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: PrecomKeywordBundle:Default:index }

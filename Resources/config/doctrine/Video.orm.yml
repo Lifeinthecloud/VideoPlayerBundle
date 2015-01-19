@@ -11,15 +11,11 @@ Lifeinthecloud\VideoPlayerBundle\Entity\Video:
             comment: ''
         videoId:
             type: string
-            nullable: true
+            nullable: false
             length: 255
             fixed: false
             comment: ''
-    oneToOne:
         videoServer:
-            targetEntity: VideoServer
-            joinColumn:
-                name: video_server_id
-                referencedColumnName: id
-            cascade: ["persist"]
+            type: integer
+            nullable: false
     lifecycleCallbacks: {  }

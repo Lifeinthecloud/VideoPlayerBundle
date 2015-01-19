@@ -15,12 +15,12 @@ use Lifeinthecloud\VideoPlayerBundle\Security\VideoProviderInterface;
 use Lifeinthecloud\VideoPlayerBundle\Exception\UnsupportedVideoException;
 use Lifeinthecloud\VideoPlayerBundle\Exception\TitleNotFoundException;
 use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface as SecurityVideoInterface;
-use Lifeinthecloud\VideoPlayerBundle\Model\Video;
 use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface;
 use Lifeinthecloud\VideoPlayerBundle\Model\VideoManagerInterface;
 
 class VideoProvider implements VideoProviderInterface
 {
+
     /**
      * @var VideoManagerInterface
      */
@@ -84,4 +84,5 @@ class VideoProvider implements VideoProviderInterface
     {
         return $this->videoManager->findVideoByTitle($title);
     }
+
 }

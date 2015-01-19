@@ -3,6 +3,8 @@
 namespace Lifeinthecloud\VideoPlayerBundle\Service;
 
 use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
+use Lifeinthecloud\VideoPlayerBundle\Server\ListServer;
+use Lifeinthecloud\VideoPlayerBundle\Player\ListPlayer;
 
 /**
  * Class VideoPlayerBundle
@@ -14,9 +16,9 @@ use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
  * @version     1.0
  * @package     Lifeinthecloud\VideoPlayer\Service
  */
-
 class VideoPlayerService
 {
+
     /**
      * Object parser
      *
@@ -45,18 +47,18 @@ class VideoPlayerService
      */
     public $param = array(
         'player' => array(
-            'player'    => 'Flash',
-            'width'     => 560,
-            'height'    => 340,
-            'param'     => array()
+            'player' => 1,
+            'width' => 560,
+            'height' => 340,
+            'param' => array()
         ),
         'server' => array(
-            'server'    => null,
-            'id'        => null,
-            'param'     => array()
+            'server' => null,
+            'id' => null,
+            'param' => array()
         ),
         'parser' => array(
-            'url'       => null
+            'url' => null
         )
     );
 
@@ -79,38 +81,38 @@ class VideoPlayerService
      * @param   $param    Array of parameters
      * @throws VideoPlayerException
      */
-    public function __construct (  )
+    public function __construct()
     {
-
+        
     }
 
-    public function play($param=null)
+    public function play($param = null)
     {
-        if (is_null($param) OR !is_array($param))
+        if (is_null($param) OR !is_array($param)) {
             throw new VideoPlayerException('Parameter could be an array.', 1);
+        }
 
-        $this->param = self::arrayMergeRecursive($this->param, $param);
+        $this->param = $this->arrayMergeRecursive($this->param, $param);
 
-        if (is_null($this->param['server']['server']) OR !is_string($this->param['server']['server']))
-            throw new VideoPlayerException('Variable server.server could be string.', 2);
+        if (is_null($this->param['server']['server']) OR !is_int($this->param['server']['server'])) {
+            throw new VideoPlayerException('Variable server.server must be an integer.', 2);
+        }
 
-        if (is_null($this->param['player']['player']) OR !is_string($this->param['player']['player']))
-            throw new VideoPlayerException('Variable player.player could be string.', 3);
+        if (is_null($this->param['player']['player']) OR !is_int($this->param['player']['player'])) {
+            throw new VideoPlayerException('Variable player.player must be an integer.', 3);
+        }
 
-        if (!is_null($this->param['parser']['url']) AND is_string($this->param['parser']['url']))
-            self::parseInstance();
+        if (is_null($this->param['server']['id']) OR !is_string($this->param['server']['id'])) {
+            throw new VideoPlayerException('Variable serveur.id must be a string.', 4);
+        }
 
-        if (is_null($this->param['server']['id']) OR !is_string($this->param['server']['id']))
-            throw new VideoPlayerException('Variable serveur.id could be a string.', 4);
-
-        $className = 'Lifeinthecloud\VideoPlayerBundle\Server\\'.self::getServerName().'Server';
-        //$className = 'Hoa_VideoPlayer_Server_'.self::getServerName();
-        $this->server = new $className($this->param['server']);
+        $serverClassName = ListServer::getClassFromServerId($this->param['server']['server']);
+        $this->server = new $serverClassName($this->param['server']);
 
         $this->param['player']['url'] = $this->server->getUrl();
 
-        $className = 'Lifeinthecloud\VideoPlayerBundle\Player\\'.self::getPlayerName();
-        $this->player = new $className($this->param['player']);
+        $playerClassName = ListPlayer::getClassFromPlayerId($this->param['player']['player']);
+        $this->player = new $playerClassName($this->param['player']);
 
         return self::__toString();
     }
@@ -120,31 +122,9 @@ class VideoPlayerService
      *
      * @return string $param Portion HTML
      */
-    public function __tostring ( )
+    public function __tostring()
     {
-        return ''.$this->player;
-    }
-
-    /**
-     * getServerName
-     * Retourne le nom référence du server
-     *
-     * @return   Nom référence
-     */
-    public function getServerName ( )
-    {
-        return ucfirst(strtolower(trim($this->param['server']['server'])));
-    }
-
-    /**
-     * getPlayerName
-     * Retourne le nom référence du player
-     *
-     * @return   Nom référence
-     */
-    public function getPlayerName ( )
-    {
-        return ucfirst(strtolower(trim($this->param['player']['player'])));
+        return '' . $this->player;
     }
 
     /**
@@ -153,7 +133,7 @@ class VideoPlayerService
      *
      * @return   tableau des parametres
      */
-    public function getServerParam ( )
+    public function getServerParam()
     {
         return $this->server->getParam();
     }
@@ -164,7 +144,7 @@ class VideoPlayerService
      *
      * @return   tableau des parametres
      */
-    public function getPlayerParam ( )
+    public function getPlayerParam()
     {
         return $this->player->getParam();
     }
@@ -175,7 +155,7 @@ class VideoPlayerService
      *
      * @return   tableau des parametres
      */
-    public function getVideoId ( )
+    public function getVideoId()
     {
         return $this->server->getId();
     }
@@ -186,24 +166,9 @@ class VideoPlayerService
      *
      * @return   tableau des parametres
      */
-    public function getVideoUrl ( )
+    public function getVideoUrl()
     {
         return $this->server->getUrl();
-    }
-
-    /**
-     * parse
-     * Parse une url et défini l'id vidéo
-     */
-    private function parseInstance ( )
-    {
-        /**
-         * Hoa importation
-         */
-        $className = 'Lifeinthecloud\VideoPlayerBundle\Parser\\'.self::getServerName().'Parser';
-        $this->parser = new $className($this->param['parser']['url']);
-
-        $this->param['server']['id'] = $this->parser->id;
     }
 
     /**
@@ -215,16 +180,15 @@ class VideoPlayerService
      *
      * @return  Tableau fusionné
      */
-    private function arrayMergeRecursive ( array &$array1, array &$array2 )
+    private function arrayMergeRecursive(array &$array1, array &$array2)
     {
         $merged = $array1;
 
         foreach ($array2 as $key => &$value) {
 
             if (is_array($value) && isset($merged[$key]) && is_array($merged[$key])) {
-                $merged[$key] = self::arrayMergeRecursive ($merged[$key], $value);
-            }
-            else {
+                $merged[$key] = self::arrayMergeRecursive($merged[$key], $value);
+            } else {
                 $merged[$key] = $value;
             }
         }

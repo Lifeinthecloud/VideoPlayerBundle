@@ -34,6 +34,7 @@ use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface;
  */
 interface VideoProviderInterface
 {
+
     /**
      * Loads the video for the given title.
      *

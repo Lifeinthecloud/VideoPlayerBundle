@@ -3,7 +3,7 @@
 namespace Lifeinthecloud\VideoPlayerBundle\Twig;
 
 use Lifeinthecloud\VideoPlayerBundle\Service\VideoPlayerService;
-use Lifeinthecloud\VideoPlayerBundle\Model\Video;
+use Lifeinthecloud\VideoPlayerBundle\Entity\VideoInterface;
 
 /**
  * Twig extension to embed the video directly in twig
@@ -21,7 +21,7 @@ class VideoPlayerExtension extends \Twig_Extension
         $this->videoPlayerManager = $videoPlayerManager;
     }
     
-    public function renderVideo(Video $video, $videoWidth, $imageHeight)
+    public function renderVideo(VideoInterface $video, $videoWidth, $imageHeight)
     {
         return $this->videoPlayerManager->play(array(
             'player' => array(
@@ -29,7 +29,7 @@ class VideoPlayerExtension extends \Twig_Extension
                 'height' => $imageHeight,
             ),
             'server' => array(
-                'server' => $video->getVideoServer()->getName(),
+                'server' => $video->getVideoServer(),
                 'id' => $video->getVideoId(),
             ),
         ));
