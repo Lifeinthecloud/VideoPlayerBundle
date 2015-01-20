@@ -47,4 +47,18 @@ interface VideoInterface
      * @return self
      */
     public function setVideoId($videoId);
+    
+    /**
+     * Gets video thumb url.
+     *
+     * @return string
+     */
+    public function getThumb();
+    
+    /**
+     * Set the video thumb url.
+     *
+     * @return string
+     */
+    public function setThumb($thumb);
 }
