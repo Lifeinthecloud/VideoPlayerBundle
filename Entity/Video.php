@@ -16,6 +16,7 @@ namespace Lifeinthecloud\VideoPlayerBundle\Entity;
  */
 abstract class Video implements VideoInterface
 {
+
     protected $id;
 
     /**
@@ -33,8 +34,14 @@ abstract class Video implements VideoInterface
      */
     protected $videoId;
 
+    /**
+     * @var string
+     */
+    protected $thumb;
+
     public function __construct()
     {
+        
     }
 
     /**
@@ -69,7 +76,7 @@ abstract class Video implements VideoInterface
             $this->title,
             $this->videoId,
             $this->id,
-         ) = $data;
+            ) = $data;
     }
 
     /**
@@ -134,6 +141,22 @@ abstract class Video implements VideoInterface
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getThumb()
+    {
+        return $this->thumb;
+    }
+
+    /**
+     * @param string $thumb
+     */
+    public function setThumb($thumb)
+    {
+        $this->thumb = $thumb;
     }
 
 }

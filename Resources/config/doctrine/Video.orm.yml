@@ -18,4 +18,10 @@ Lifeinthecloud\VideoPlayerBundle\Entity\Video:
         videoServer:
             type: integer
             nullable: false
+        thumb:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
     lifecycleCallbacks: {  }
