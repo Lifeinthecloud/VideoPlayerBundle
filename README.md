@@ -25,7 +25,7 @@ Unified Modeling Language of entities
 
 UML of the Video entity
 
-(https://github.com/Lifeinthecloud/VideoPlayerBundle/blob/master/Resources/doc//images/video-entity.png "Video entity")
+![UML of the Video entity](https://github.com/Lifeinthecloud/VideoPlayerBundle/blob/master/Resources/doc//images/video-entity.png "Video entity")
 
 
 License
