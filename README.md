@@ -19,6 +19,15 @@ Installation
 
 All the installation instructions are located in the documentation.
 
+
+Unified Modeling Language of entities
+-------------------------------------
+
+UML of the Video entity
+
+(https://github.com/Lifeinthecloud/VideoPlayerBundle/blob/master/Resources/doc//images/video-entity.png "Video entity")
+
+
 License
 -------
 
