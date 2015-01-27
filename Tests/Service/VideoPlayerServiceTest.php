@@ -11,7 +11,6 @@
 
 namespace LITC\VideoPlayerBundle\Tests\Service;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use LITC\VideoPlayerBundle\Service\VideoPlayerService;
 use LITC\VideoPlayerBundle\Server\ListServer;
 
@@ -21,43 +20,141 @@ use LITC\VideoPlayerBundle\Server\ListServer;
  * @version 1.0
  * @package LITC\VideoPlayerBundle\Tests\Service
  */
-class VideoPlayerServiceTest extends WebTestCase
+class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
 {
+    /* @var VideoPlayerService */
+    private $videoPlayerService = null;
 
-    private $params = array(
+    /* @var array default youtube configuration */
+    private static $defaultYoutubeSettings = array(
         'server' => array(
-            'server'    => 2,
             'id'        => '7qfxCvwyxms'
         ),
-        'player' => array(
-            'width'     => 800,
-            'height'    => 500
+    );
+
+    /* @var array default vimeo configuration */
+    private static $defaultVimeoSettings = array(
+        'server' => array(
+            'id'        => '51140690'
         )
     );
 
+    /* @var array default dailymotion configuration */
+    private static $defaultDailymotionSettings = array(
+        'server' => array(
+            'id'        => 'x385_saschienne-unknown-unknown-album_fun'
+        ),
+    );
+
+    /* @var array default player settings */
+    private static $defaultPlayerSettings =  array(
+        'width'     => 800,
+        'height'    => 500
+    );
+
+    /**
+     * Initialize VideoPlayerService
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
+     */
+    public function __construct()
+    {
+        $this->videoPlayerService = new VideoPlayerService();
+    }
+
+    /**
+     * Initialize tests
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
+     *
+     * @throws \Exception
+     */
+    public static function setUpBeforeClass()
+    {
+        // Initialize default server
+        self::setDefaultVideoServer(self::$defaultYoutubeSettings, 'Youtube');
+        self::setDefaultVideoServer(self::$defaultVimeoSettings, 'Vimeo');
+        self::setDefaultVideoServer(self::$defaultDailymotionSettings, 'Dailymotion');
+
+        // Initialize player settings
+        self::$defaultYoutubeSettings['player']     = self::$defaultPlayerSettings;
+        self::$defaultVimeoSettings['player']       = self::$defaultPlayerSettings;
+        self::$defaultDailymotionSettings['player'] = self::$defaultPlayerSettings;
+    }
+
+    /**
+     * Change default video server settings
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
+     *
+     * @param array $defaultSettingsServer
+     * @param string $server
+     * @throws \Exception
+     */
+    private function setDefaultVideoServer(&$defaultSettingsServer, $server)
+    {
+        if(empty($defaultSettingsServer) && !is_array($defaultSettingsServer)) {
+            throw new \Exception('Default server parameters must be an array');
+        }
+
+        if(empty($server)) {
+            throw new \Exception('Parameter server can not be empty');
+        }
+
+        $defaultSettingsServer['server']['server'] = ListServer::getServerId($server);
+    }
+
     /**
      * Test player
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
      */
-    public function testPlay()
+    public function testPlayYoutubeVideo()
     {
-        $serverId = ListServer::getServerId('Youtube');
-        
-        $videoPlayerService = new VideoPlayerService();
-        $videoHtml = $videoPlayerService->play($this->params);
+        $videoHtml = $this->videoPlayerService
+            ->play(self::$defaultYoutubeSettings);
         
 	    $this->assertNotNull($videoHtml);
     }
 
     /**
+     * Test player
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
+     */
+    public function testPlayVimeoVideo()
+    {
+        $videoHtml = $this->videoPlayerService
+            ->play(self::$defaultVimeoSettings);
+
+	    $this->assertNotNull($videoHtml);
+    }
+
+    /**
+     * Test player
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
+     */
+    public function testPlayDailymotionVideo()
+    {
+        $videoHtml = $this->videoPlayerService
+            ->play(self::$defaultDailymotionSettings);
+
+	    $this->assertNotNull($videoHtml);
+    }
+
+    /**
      * Test to string function
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
      */
     public function testToString()
     {
-        $serverId = ListServer::getServerId('Youtube');
+        $this->videoPlayerService
+            ->setParameters(self::$defaultYoutubeSettings);
 
-        $videoPlayerService = new VideoPlayerService();
-        $videoPlayerService->setParameters($this->params);
-        $videoHtml = $videoPlayerService->__tostring();
+        $videoHtml = $this->videoPlayerService
+            ->__tostring();
 
 	    $this->assertNotNull($videoHtml);
     }

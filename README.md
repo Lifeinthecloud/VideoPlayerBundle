@@ -5,6 +5,8 @@ The VideoPlayerBundle adds support for a database-backed video system in Symfony
 It provides a flexible framework for video management that aims to handle
 common tasks such as reading from hosting websites videos: Youtube, Vimeo, Dailymotion.
 
+[![Latest Stable Version](https://poser.pugx.org/lifeinthecloud/video-player-bundle/v/stable.svg)](https://packagist.org/packages/lifeinthecloud/video-player-bundle) [![Total Downloads](https://poser.pugx.org/lifeinthecloud/video-player-bundle/downloads.svg)](https://packagist.org/packages/lifeinthecloud/video-player-bundle) [![Latest Unstable Version](https://poser.pugx.org/lifeinthecloud/video-player-bundle/v/unstable.svg)](https://packagist.org/packages/lifeinthecloud/video-player-bundle) [![License](https://poser.pugx.org/lifeinthecloud/video-player-bundle/license.svg)](https://packagist.org/packages/lifeinthecloud/video-player-bundle)
+
 Documentation
 -------------
 

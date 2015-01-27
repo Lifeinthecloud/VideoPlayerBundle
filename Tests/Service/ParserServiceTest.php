@@ -14,7 +14,6 @@ namespace LITC\VideoPlayerBundle\Tests\Service;
 use LITC\VideoPlayerBundle\Tests\TestVideo as Video;
 use LITC\VideoPlayerBundle\Service\ParserService;
 use LITC\VideoPlayerBundle\Server\ListServer;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * Class ParserServiceTest
@@ -22,17 +21,29 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  * @version 1.0
  * @package LITC\VideoPlayerBundle\Tests\Service
  */
-class ParserServiceTest extends WebTestCase
+class ParserServiceTest extends \PHPUnit_Framework_TestCase
 {
+    /* @var string */
+    private static $youtubeClassicUrl = 'https://www.youtube.com/watch?v=PtmsoAbqT8w';
+
+    /* @var string */
+    private static $youtubePlaylistUrl = 'https://www.youtube.com/watch?v=PtmsoAbqT8w&list=PLT1rsgsHTfQWad8UpMODj-EseQ76bNTaJ';
+
+    /* @var string */
+    private static $vimeoClassicUrl = 'http://vimeo.com/51140690';
+
+    /* @var string */
+    private static $dailymotionClassicUrl = 'http://www.dailymotion.com/video/x27x385_saschienne-unknown-unknown-album_fun';
+
     /**
      * Assert successful parse on a classic youtube video
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
      */
     public function testParseClassicYoutubeVideoSuccess()
     {
-        $url = 'https://www.youtube.com/watch?v=PtmsoAbqT8w';
-        
         $parserService = new ParserService();
-        $video = $parserService->parse(new Video(), $url);
+        $video = $parserService->parse(new Video(), self::$youtubeClassicUrl);
         
         // Assert video server
         $videoServer = ListServer::getServerName($video->getVideoServer());
@@ -47,13 +58,13 @@ class ParserServiceTest extends WebTestCase
     
     /**
      * Assert successful parse on a youtube playlist
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
      */
     public function testParseYoutubePlaylistSuccess()
     {
-        $url = 'https://www.youtube.com/watch?v=PtmsoAbqT8w&list=PLT1rsgsHTfQWad8UpMODj-EseQ76bNTaJ';
-        
         $parserService = new ParserService();
-        $video = $parserService->parse(new Video(), $url);
+        $video = $parserService->parse(new Video(), self::$youtubePlaylistUrl);
         
         // Assert video server
         $videoServer = ListServer::getServerName($video->getVideoServer());
@@ -67,7 +78,9 @@ class ParserServiceTest extends WebTestCase
     }
     
     /**
-     * Assert exception on a fail video url
+     * Assert exception on a fake video url
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
      * 
      * @expectedException \LITC\VideoPlayerBundle\Exception\UnsupportedVideoException
      * @expectedExceptionMessage No supported server found in url
@@ -83,13 +96,15 @@ class ParserServiceTest extends WebTestCase
     
     /**
      * Assert successful parse on a classic vimeo video
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
      */
     public function testParseClassicVimeoVideoSuccess()
     {
-        $url = 'http://vimeo.com/51140690';
+        $url = '';
         
         $parserService = new ParserService();
-        $video = $parserService->parse(new Video(), $url);
+        $video = $parserService->parse(new Video(), self::$vimeoClassicUrl);
         
         // Assert video server
         $videoServer = ListServer::getServerName($video->getVideoServer());
@@ -104,13 +119,13 @@ class ParserServiceTest extends WebTestCase
     
     /**
      * Assert successful parse on a classic youtube video
+     *
+     * @author Antoine DARCHE <darche.antoine@gmail.com>
      */
     public function testParseClassicDailymotionVideoSuccess()
     {
-        $url = 'http://www.dailymotion.com/video/x27x385_saschienne-unknown-unknown-album_fun';
-        
         $parserService = new ParserService();
-        $video = $parserService->parse(new Video(), $url);
+        $video = $parserService->parse(new Video(), self::$dailymotionClassicUrl);
         
         // Assert video server
         $videoServer = ListServer::getServerName($video->getVideoServer());
