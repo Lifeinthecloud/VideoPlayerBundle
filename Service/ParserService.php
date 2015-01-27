@@ -12,11 +12,13 @@
 namespace LITC\VideoPlayerBundle\Service;
 
 use LITC\VideoPlayerBundle\Entity\VideoInterface;
+use LITC\VideoPlayerBundle\Exception\UnsupportedVideoException;
 
 /**
  * Class ParserService
  *
  * @author      Thibault Harel
+ * @author      Antoine DARCHE <darche.antoine@gmail.com>
  * @copyright   Copyright (c) 2009 Life in the cloud.
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
