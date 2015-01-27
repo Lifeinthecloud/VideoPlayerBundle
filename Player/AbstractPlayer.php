@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Player;
+namespace LITC\VideoPlayerBundle\Player;
 
 /**
  * Class VideoPlayer Player Abstract

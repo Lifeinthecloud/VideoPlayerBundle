@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\DependencyInjection;
+namespace LITC\VideoPlayerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -35,7 +35,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('lifeinthecloud_video_player');
+        $rootNode = $treeBuilder->root('litc_video_player');
         $supportedDrivers = array('orm');
         $rootNode
             ->children()

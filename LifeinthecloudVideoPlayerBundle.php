@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle;
+namespace LITC\VideoPlayerBundle;
 
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Definition;
  *
  * @author Antoine DARCHE <antoine.darche@gmail.com>
  */
-class LifeinthecloudVideoPlayerBundle extends Bundle
+class LITCVideoPlayerBundle extends Bundle
 {
 
     public function build(ContainerBuilder $container)
@@ -33,9 +33,9 @@ class LifeinthecloudVideoPlayerBundle extends Bundle
 
         return new DoctrineOrmMappingsPass(
             $driver,
-            array('Lifeinthecloud\VideoPlayerBundle'),
-            array('lifeinthecloud_video_player.video_manager.default'),
-            'LifeinthecloudVideoPlayerBundle.orm_enabled'
+            array('LITC\VideoPlayerBundle'),
+            array('litc_video_player.video_manager.default'),
+            'LITCVideoPlayerBundle.orm_enabled'
         );
     }
 

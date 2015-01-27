@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Doctrine;
+namespace LITC\VideoPlayerBundle\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoManager as BaseVideoManager;
-use Lifeinthecloud\VideoPlayerBundle\Util\CanonicalizerInterface;
+use LITC\VideoPlayerBundle\Model\VideoInterface;
+use LITC\VideoPlayerBundle\Model\VideoManager as BaseVideoManager;
+use LITC\VideoPlayerBundle\Util\CanonicalizerInterface;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 
 /**

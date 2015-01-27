@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Security;
+namespace LITC\VideoPlayerBundle\Security;
 
-use Lifeinthecloud\VideoPlayerBundle\Security\VideoProviderInterface;
-use Lifeinthecloud\VideoPlayerBundle\Exception\UnsupportedVideoException;
-use Lifeinthecloud\VideoPlayerBundle\Exception\TitleNotFoundException;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface as SecurityVideoInterface;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoManagerInterface;
+use LITC\VideoPlayerBundle\Security\VideoProviderInterface;
+use LITC\VideoPlayerBundle\Exception\UnsupportedVideoException;
+use LITC\VideoPlayerBundle\Exception\TitleNotFoundException;
+use LITC\VideoPlayerBundle\Model\VideoInterface as SecurityVideoInterface;
+use LITC\VideoPlayerBundle\Model\VideoInterface;
+use LITC\VideoPlayerBundle\Model\VideoManagerInterface;
 
 class VideoProvider implements VideoProviderInterface
 {

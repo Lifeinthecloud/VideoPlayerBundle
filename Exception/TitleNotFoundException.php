@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Exception;
+namespace LITC\VideoPlayerBundle\Exception;
 
 /**
  * TitleNotFoundException is thrown if a Video cannot be found by its title.

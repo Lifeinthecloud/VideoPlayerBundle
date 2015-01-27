@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Entity;
+namespace LITC\VideoPlayerBundle\Entity;
 
 /**
  * @author Antoine DARCHE <antoine.darche@gmail.com>

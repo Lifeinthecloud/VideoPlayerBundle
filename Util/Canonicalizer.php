@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Util;
+namespace LITC\VideoPlayerBundle\Util;
 
 class Canonicalizer implements CanonicalizerInterface
 {

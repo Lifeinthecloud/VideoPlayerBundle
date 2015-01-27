@@ -1,8 +1,17 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Service;
+/*
+ * This file is part of the VideoPlayerBundle package.
+ *
+ * (c) Life in the cloud <http://lifeinthecloud.fr/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+ 
+namespace LITC\VideoPlayerBundle\Service;
 
-use Lifeinthecloud\VideoPlayerBundle\Entity\VideoInterface;
+use LITC\VideoPlayerBundle\Entity\VideoInterface;
 
 /**
  * Class ParserService
@@ -12,7 +21,7 @@ use Lifeinthecloud\VideoPlayerBundle\Entity\VideoInterface;
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
  * @version     1.0
- * @package     Lifeinthecloud\VideoPlayer\Service
+ * @package     LITC\VideoPlayer\Service
  */
 class ParserService
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Twig;
+namespace LITC\VideoPlayerBundle\Twig;
 
-use Lifeinthecloud\VideoPlayerBundle\Service\VideoPlayerService;
-use Lifeinthecloud\VideoPlayerBundle\Entity\VideoInterface;
+use LITC\VideoPlayerBundle\Service\VideoPlayerService;
+use LITC\VideoPlayerBundle\Entity\VideoInterface;
 
 /**
  * Twig extension to embed the video directly in twig
@@ -44,7 +44,7 @@ class VideoPlayerExtension extends \Twig_Extension
     
     public function getName()
     {
-        return 'lifeinthecloud_video_player.video_player_extension';
+        return 'litc_video_player.video_player_extension';
     }
 
 }

@@ -9,14 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace LITC\VideoPlayerBundle\Util;
-
-interface CanonicalizerInterface
-{
-    /**
-     * @param string $string
-     *
-     * @return string
-     */
-    public function canonicalize($string);
+if (!is_file($autoloadFile = __DIR__.'/../vendor/autoload.php')) {
+    throw new \LogicException('Could not find autoload.php in vendor/. Did you run "composer install --dev"?');
 }
+
+require $autoloadFile;

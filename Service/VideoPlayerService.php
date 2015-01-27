@@ -1,10 +1,19 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Service;
+/*
+ * This file is part of the VideoPlayerBundle package.
+ *
+ * (c) Life in the cloud <http://lifeinthecloud.fr/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+ 
+namespace LITC\VideoPlayerBundle\Service;
 
-use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
-use Lifeinthecloud\VideoPlayerBundle\Server\ListServer;
-use Lifeinthecloud\VideoPlayerBundle\Player\ListPlayer;
+use LITC\VideoPlayerBundle\Exception\VideoPlayerException;
+use LITC\VideoPlayerBundle\Server\ListServer;
+use LITC\VideoPlayerBundle\Player\ListPlayer;
 
 /**
  * Class VideoPlayerBundle
@@ -14,7 +23,7 @@ use Lifeinthecloud\VideoPlayerBundle\Player\ListPlayer;
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
  * @version     1.0
- * @package     Lifeinthecloud\VideoPlayer\Service
+ * @package     LITC\VideoPlayer\Service
  */
 class VideoPlayerService
 {

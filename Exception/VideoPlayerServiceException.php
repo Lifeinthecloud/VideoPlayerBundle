@@ -6,7 +6,7 @@
  * Time: 15:56
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Exception;
+namespace LITC\VideoPlayerBundle\Exception;
 
 /**
  * VideoPlayerServiceException is thrown when a video player request could not be processed due to a system problem.

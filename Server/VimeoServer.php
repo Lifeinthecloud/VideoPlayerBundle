@@ -1,8 +1,8 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Server;
+namespace LITC\VideoPlayerBundle\Server;
 
-use Lifeinthecloud\VideoPlayerBundle\Server\AbstractServer;
+use LITC\VideoPlayerBundle\Server\AbstractServer;
 
 /**
  * Class VideoPlayer Server Vimeo
@@ -12,7 +12,7 @@ use Lifeinthecloud\VideoPlayerBundle\Server\AbstractServer;
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
  * @version     1.0
- * @package     Lifeinthecloud\VideoPlayer\Server
+ * @package     LITC\VideoPlayer\Server
  * @subpackage  VimeoServer
  */
 

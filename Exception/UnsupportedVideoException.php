@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Exception;
+namespace LITC\VideoPlayerBundle\Exception;
 
 /**
  * This exception is thrown when a video is reloaded from a provider which

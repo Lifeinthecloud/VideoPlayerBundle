@@ -11,8 +11,8 @@
 
 namespace FOS\VideoBundle\Util;
 
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoManagerInterface;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoServer;
+use LITC\VideoPlayerBundle\Model\VideoManagerInterface;
+use LITC\VideoPlayerBundle\Model\VideoServer;
 
 /**
  * Executes some manipulations on the videos
@@ -40,7 +40,7 @@ class VideoManipulator
      * @param VideoServer   $videoServer
      * @param string        $videoId
      *
-     * @return \Lifeinthecloud\VideoPlayerBundle\Model\VideoManagerInterface
+     * @return \LITC\VideoPlayerBundle\Model\VideoManagerInterface
      */
     public function create($title, VideoServer $videoServer, $videoId)
     {

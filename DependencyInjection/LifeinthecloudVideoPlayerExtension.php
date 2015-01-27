@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\DependencyInjection;
+namespace LITC\VideoPlayerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -24,7 +24,7 @@ use Symfony\Component\Config\FileLocator;
  *
  * @author Antoine DARCHE <antoine.darche@gmail.com>
  */
-class LifeinthecloudVideoPlayerExtension extends Extension
+class LITCVideoPlayerExtension extends Extension
 {
 
     public function load(array $configs, ContainerBuilder $container)
@@ -46,8 +46,8 @@ class LifeinthecloudVideoPlayerExtension extends Extension
         $this->remapParametersNamespaces($config, $container, array(
             '' => array(
                 'db_driver' => 'listener.storage',
-                'model_manager_name' => 'lifeinthecloud_video_player.model_manager_name',
-                'video_class' => 'lifeinthecloud_video_player.model.video.class',
+                'model_manager_name' => 'litc_video_player.model_manager_name',
+                'video_class' => 'litc_video_player.model.video.class',
             ),
         ));
     }

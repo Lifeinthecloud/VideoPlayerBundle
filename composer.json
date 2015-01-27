@@ -1,8 +1,8 @@
 {
     "name": "lifeinthecloud/video-player-bundle",
     "type": "symfony-bundle",
-    "description": "A Symfony2 provides while manipulating video from social media network",
-    "keywords": ["symfony2", "video", "social", "youtube", "vimeo", "youtube"],
+    "description": "Symfony LITCVideoPlayerBundle",
+    "keywords": ["symfony2", "Lifeinthecloud", "video manager", "video", "youtube", "vimeo", "dailymotion"],
     "homepage": "https://github.com/Lifeinthecloud/VideoPlayerBundle",
     "license": "MIT",
     "authors": [
@@ -23,10 +23,11 @@
         "php": ">=5.3.2",
         "symfony/symfony" : ">=2.1"
     },
-	"require-dev": {
+    "require-dev": {
         "phpunit/phpunit": "~4.0"
-	},
+    },
 	"autoload": {
-        "psr-4": { "Lifeinthecloud\\VideoPlayerBundle\\": "" }
-    }
+        "psr-4": { "LITC\\VideoPlayerBundle\\": "" }
+    },
+    "target-dir": "LITC/VideoPlayerBundle"
 }

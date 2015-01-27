@@ -1,4 +1,4 @@
-Lifeinthecloud\VideoPlayerBundle\Entity\Video:
+LITC\VideoPlayerBundle\Entity\Video:
     type: mappedSuperclass
     repositoryClass: VideoRepository
     table: video

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Server;
+namespace LITC\VideoPlayerBundle\Server;
 
 class ListServer
 {
@@ -10,7 +10,7 @@ class ListServer
         2 => 'Vimeo',
         3 => 'Youtube'
     );
-    private static $namespace = 'Lifeinthecloud\VideoPlayerBundle\Server\\';
+    private static $namespace = 'LITC\VideoPlayerBundle\Server\\';
     private static $suffixe = 'Server';
 
     public static function getClassFromServerId($id)

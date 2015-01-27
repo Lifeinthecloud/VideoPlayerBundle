@@ -1,8 +1,8 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Server;
+namespace LITC\VideoPlayerBundle\Server;
 
-use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
+use LITC\VideoPlayerBundle\Exception\VideoPlayerException;
 
 /**
  * Class VideoPlayer Server Abstract
@@ -12,7 +12,7 @@ use Lifeinthecloud\VideoPlayerBundle\Exception\VideoPlayerException;
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
  * @version     0.1
- * @package     Lifeinthecloud\VideoPlayer\Server
+ * @package     LITC\VideoPlayer\Server
  * @subpackage  ServerAbstract
  */
 abstract class AbstractServer

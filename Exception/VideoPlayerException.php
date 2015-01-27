@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Exception;
+namespace LITC\VideoPlayerBundle\Exception;
 
 /**
  * Class Hoa_VideoPlayer_Exception.
@@ -12,7 +12,7 @@ namespace Lifeinthecloud\VideoPlayerBundle\Exception;
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
  * @version     1.0
- * @package     Lifeinthecloud\VideoPlayer\Parser
+ * @package     LITC\VideoPlayer\Parser
  * @subpackage  ParserAbstract
  */
 class VideoPlayerException extends \RuntimeException implements \Serializable {

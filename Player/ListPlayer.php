@@ -1,6 +1,6 @@
 <?php
 
-namespace Lifeinthecloud\VideoPlayerBundle\Player;
+namespace LITC\VideoPlayerBundle\Player;
 
 class ListPlayer
 {
@@ -9,7 +9,7 @@ class ListPlayer
         1 => 'Flash'
     );
     
-    private static $namespace = 'Lifeinthecloud\VideoPlayerBundle\Player\\';
+    private static $namespace = 'LITC\VideoPlayerBundle\Player\\';
     
     private static $suffixe = 'Player';
 

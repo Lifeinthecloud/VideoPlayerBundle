@@ -43,10 +43,10 @@ Installation is a quick (I promise!) 7 step process:
 Add VideoPlayerBundle by running the command:
 
 ``` bash
-$ php composer.phar require lifeinthecloud/video-player-bundle "dev-master"
+$ php composer.phar require litc/video-player-bundle "dev-master"
 ```
 
-Composer will install the bundle to your project's `vendor/lifeinthecloud` directory.
+Composer will install the bundle to your project's `vendor/litc` directory.
 
 ### Step 2: Enable the bundle
 
@@ -60,7 +60,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Lifeinthecloud\VideoPlayerBundle\LifeinthecloudVideoPlayerBundle(),
+        new LITC\VideoPlayerBundle\LITCVideoPlayerBundle(),
     );
 }
 ```
@@ -117,7 +117,7 @@ start:
 
 namespace Acme\VideoBundle\Entity;
 
-use Lifeinthecloud\VideoPlayerBundle\Model\Video as BaseVideo;
+use LITC\VideoPlayerBundle\Model\Video as BaseVideo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -155,7 +155,7 @@ If you use yml to configure Doctrine you must add two files. The Entity and the 
 
 namespace Acme\VideoBundle\Entity;
 
-use Lifeinthecloud\VideoPlayerBundle\Model\Video as BaseVideo;
+use LITC\VideoPlayerBundle\Model\Video as BaseVideo;
 
 /**
  * Video
@@ -192,7 +192,7 @@ of datastore you are using.
 
 ``` yaml
 # app/config/config.yml
-lifeinthecloud_video_player:
+litc_video_player:
     db_driver: orm
     video_class: Acme\VideoBundle\Entity\Video
 ```

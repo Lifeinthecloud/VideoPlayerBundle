@@ -1,5 +1,5 @@
 services:
-    lifeinthecloud_video_player.validator.initializer:
-        class: Lifeinthecloud\VideoPlayerBundle\Validator\Initializer
+    litc_video_player.validator.initializer:
+        class: LITC\VideoPlayerBundle\Validator\Initializer
         tag: validator.initializer
-        arguments: ["lifeinthecloud_video_player.video_manager"]
+        arguments: ["litc_video_player.video_manager"]

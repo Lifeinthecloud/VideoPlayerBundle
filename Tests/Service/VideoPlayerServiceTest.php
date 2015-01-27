@@ -6,21 +6,18 @@
  * Time: 22:59
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Tests\Service;
+namespace LITC\VideoPlayerBundle\Tests\Service;
 
-use Lifeinthecloud\VideoPlayerBundle\Service\VideoPlayerService;
+//use LITC\VideoPlayerBundle\Service\VideoPlayerService;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * Class VideoPlayerServiceTest
- * @package Lifeinthecloud\VideoPlayerBundle\Tests\Service
+ * @package LITC\VideoPlayerBundle\Tests\Service
  */
-class VideoPlayerServiceTest {
-
-
-    /**
-     *
-     */
-    public function __construct()
+class VideoPlayerServiceTest extends WebTestCase
+{
+    public function testIndex()
     {
         $param = array(
             'server' => array(
@@ -32,7 +29,7 @@ class VideoPlayerServiceTest {
                 'height' => 500
             )
         );
+		
+		$this->assertTrue(true);
     }
 }
-
-new VideoPlayerServiceTest();

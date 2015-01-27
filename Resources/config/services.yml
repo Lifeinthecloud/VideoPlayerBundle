@@ -1,11 +1,11 @@
 services:
-    lifeinthecloud_video_player.video_player_service:
-        class: Lifeinthecloud\VideoPlayerBundle\Service\VideoPlayerService
-    lifeinthecloud_video_player.parser_service:
-        class: Lifeinthecloud\VideoPlayerBundle\Service\ParserService
+    litc_video_player.video_player_service:
+        class: LITC\VideoPlayerBundle\Service\VideoPlayerService
+    litc_video_player.parser_service:
+        class: LITC\VideoPlayerBundle\Service\ParserService
 
-    lifeinthecloud_video_player.twig.video_player_extension:
-        class: Lifeinthecloud\VideoPlayerBundle\Twig\VideoPlayerExtension
-        arguments: ["@lifeinthecloud_video_player.video_player_service"]
+    litc_video_player.twig.video_player_extension:
+        class: LITC\VideoPlayerBundle\Twig\VideoPlayerExtension
+        arguments: ["@litc_video_player.video_player_service"]
         tags:
             - { name: twig.extension }

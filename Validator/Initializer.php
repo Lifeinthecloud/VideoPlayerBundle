@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Validator;
+namespace LITC\VideoPlayerBundle\Validator;
 
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoManagerInterface;
+use LITC\VideoPlayerBundle\Model\VideoInterface;
+use LITC\VideoPlayerBundle\Model\VideoManagerInterface;
 use Symfony\Component\Validator\ObjectInitializerInterface;
 
 /**

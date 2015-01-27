@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Lifeinthecloud\VideoPlayerBundle\Security;
+namespace LITC\VideoPlayerBundle\Security;
 
-use Lifeinthecloud\VideoPlayerBundle\Exception\UnsupportedVideoException;
-use Lifeinthecloud\VideoPlayerBundle\Exception\TitleNotFoundException;
-use Lifeinthecloud\VideoPlayerBundle\Model\VideoInterface;
+use LITC\VideoPlayerBundle\Exception\UnsupportedVideoException;
+use LITC\VideoPlayerBundle\Exception\TitleNotFoundException;
+use LITC\VideoPlayerBundle\Model\VideoInterface;
 
 /**
  * Represents a class that loads VideoInterface objects from some source for the video player system.
