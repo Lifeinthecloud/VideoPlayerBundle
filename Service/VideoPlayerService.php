@@ -95,7 +95,7 @@ class VideoPlayerService
         
     }
 
-    public function play($param = null)
+    public function setParameters($param)
     {
         if (is_null($param) OR !is_array($param)) {
             throw new VideoPlayerException('Parameter could be an array.', 1);
@@ -114,6 +114,15 @@ class VideoPlayerService
         if (is_null($this->param['server']['id']) OR !is_string($this->param['server']['id'])) {
             throw new VideoPlayerException('Variable serveur.id must be a string.', 4);
         }
+    }
+
+    public function play($param = null)
+    {
+        if(!is_null($param)) {
+            self::setParameters($param);
+        } elseif(!is_array($this->param)) {
+            throw new VideoPlayerException('Parameter could not be empty.', 1);
+        }
 
         $serverClassName = ListServer::getClassFromServerId($this->param['server']['server']);
         $this->server = new $serverClassName($this->param['server']);
@@ -123,7 +132,7 @@ class VideoPlayerService
         $playerClassName = ListPlayer::getClassFromPlayerId($this->param['player']['player']);
         $this->player = new $playerClassName($this->param['player']);
 
-        return self::__toString();
+        return $this->player;
     }
 
     /**
@@ -133,7 +142,7 @@ class VideoPlayerService
      */
     public function __tostring()
     {
-        return '' . $this->player;
+        return self::play();
     }
 
     /**

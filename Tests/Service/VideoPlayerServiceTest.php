@@ -23,6 +23,18 @@ use LITC\VideoPlayerBundle\Server\ListServer;
  */
 class VideoPlayerServiceTest extends WebTestCase
 {
+
+    private $params = array(
+        'server' => array(
+            'server'    => 2,
+            'id'        => '7qfxCvwyxms'
+        ),
+        'player' => array(
+            'width'     => 800,
+            'height'    => 500
+        )
+    );
+
     /**
      * Test player
      */
@@ -30,20 +42,23 @@ class VideoPlayerServiceTest extends WebTestCase
     {
         $serverId = ListServer::getServerId('Youtube');
         
-        $param = array(
-            'server' => array(
-                'server' => 2,
-                'id' => '7qfxCvwyxms'
-            ),
-            'player' => array(
-                'width' => 800,
-                'height' => 500
-            )
-        );
-        
         $videoPlayerService = new VideoPlayerService();
-        $videoHtml = $videoPlayerService->play($param);
+        $videoHtml = $videoPlayerService->play($this->params);
         
-	$this->assertNotNull($videoHtml);
+	    $this->assertNotNull($videoHtml);
+    }
+
+    /**
+     * Test to string function
+     */
+    public function testToString()
+    {
+        $serverId = ListServer::getServerId('Youtube');
+
+        $videoPlayerService = new VideoPlayerService();
+        $videoPlayerService->setParameters($this->params);
+        $videoHtml = $videoPlayerService->__tostring();
+
+	    $this->assertNotNull($videoHtml);
     }
 }
