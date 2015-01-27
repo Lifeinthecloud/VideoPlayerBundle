@@ -46,7 +46,7 @@ class ParserService
             $video->setVideoServer(2);
             $video->setVideoId($match[5]);
             // get thumb from json api
-            $site = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+            $site = file_get_contents('http://vimeo.com/api/v2/video/'.$video->getVideoId().'.json');
             $convert = json_decode($site);
             if (is_object($convert[0])) {
                 $video->setThumb($convert[0]->thumbnail_large);

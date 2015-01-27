@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: antoine.darche
- * Date: 15/01/2015
- * Time: 15:56
+
+/*
+ * This file is part of the VideoPlayerBundle package.
+ *
+ * (c) Life in the cloud <http://lifeinthecloud.fr/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace LITC\VideoPlayerBundle\Exception;
