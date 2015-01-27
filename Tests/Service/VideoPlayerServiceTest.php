@@ -11,8 +11,9 @@
 
 namespace LITC\VideoPlayerBundle\Tests\Service;
 
-//use LITC\VideoPlayerBundle\Service\VideoPlayerService;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use LITC\VideoPlayerBundle\Service\VideoPlayerService;
+use LITC\VideoPlayerBundle\Server\ListServer;
 
 /**
  * Class VideoPlayerServiceTest
@@ -22,11 +23,16 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class VideoPlayerServiceTest extends WebTestCase
 {
-    public function testIndex()
+    /**
+     * Test player
+     */
+    public function testPlay()
     {
+        $serverId = ListServer::getServerId('Youtube');
+        
         $param = array(
             'server' => array(
-                'server' => 'youtube',
+                'server' => 2,
                 'id' => '7qfxCvwyxms'
             ),
             'player' => array(
@@ -34,7 +40,10 @@ class VideoPlayerServiceTest extends WebTestCase
                 'height' => 500
             )
         );
-		
-	$this->assertTrue(true);
+        
+        $videoPlayerService = new VideoPlayerService();
+        $videoHtml = $videoPlayerService->play($param);
+        
+	$this->assertNotNull($videoHtml);
     }
 }

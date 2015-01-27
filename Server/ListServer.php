@@ -35,5 +35,15 @@ class ListServer
     {
         return self::$servers[$serverId];
     }
+    
+    /**
+     * Get the server id
+     * 
+     * @param string $server
+     */
+    public static function getServerId($server)
+    {
+        return array_search($server, self::$servers);
+    }
 
 }
