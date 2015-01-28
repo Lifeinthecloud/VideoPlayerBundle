@@ -9,11 +9,12 @@ namespace LITC\VideoPlayerBundle\Exception;
  *
  * @author      Antoine DARCHE <darche.antoine@gmail.com> & Grégory DARCHE <tetardo@gmail.com>
  * @copyright   Copyright (c) 2015 Lifeinthecloud.
- * @license     http://gnu.org/licenses/gpl.txt GNU GPL
- * @since       PHP 5
+ * @link        https://github.com/Lifeinthecloud/VideoPlayerBundle
+ * @license     MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @since       PHP 5.3
  * @version     1.0
- * @package     LITC\VideoPlayer\Parser
- * @subpackage  ParserAbstract
+ * @package     LITC\VideoPlayerBundle
+ * @subpackage  Exception
  */
 class VideoPlayerException extends \RuntimeException implements \Serializable {
 

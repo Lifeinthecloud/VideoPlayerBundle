@@ -1,0 +1,8 @@
+services:
+    litc_video_player.util.canonicalizer.default:
+        class: LITC\VideoPlayerBundle\Util\Canonicalizer
+        public: false
+    litc_video_player.util.video_manipulator:
+        class: LITC\VideoPlayerBundle\Util\VideoManipulator
+        arguments: 
+            - "@litc_video_player.video_manager"

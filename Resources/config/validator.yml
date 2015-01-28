@@ -2,4 +2,5 @@ services:
     litc_video_player.validator.initializer:
         class: LITC\VideoPlayerBundle\Validator\Initializer
         tag: validator.initializer
-        arguments: ["litc_video_player.video_manager"]
+        arguments: 
+            - "litc_video_player.video_manager"

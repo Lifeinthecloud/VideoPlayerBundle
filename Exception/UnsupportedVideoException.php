@@ -16,6 +16,13 @@ namespace LITC\VideoPlayerBundle\Exception;
  * doesn't support the passed implementation of VideoInterface.
  *
  * @author Antoine DARCHE <antoine.darche@gmail.com>
+ * @copyright   Copyright (c) 2015 Lifeinthecloud.
+ * @link        https://github.com/Lifeinthecloud/VideoPlayerBundle
+ * @license     MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @since       PHP 5.3
+ * @version     1.0
+ * @package     LITC\VideoPlayerBundle
+ * @subpackage  Exception
  */
 class UnsupportedVideoException extends VideoPlayerServiceException
 {
