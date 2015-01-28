@@ -9,10 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace LITC\VideoPlayerBundle\Entity;
+namespace LITC\VideoPlayerBundle\Model;
 
 /**
- * @author Antoine DARCHE <antoine.darche@gmail.com>
+ * @author      Antoine DARCHE <antoine.darche@gmail.com>
+ * @copyright   Copyright (c) 2015 Lifeinthecloud.
+ * @link        https://github.com/Lifeinthecloud/VideoPlayerBundle
+ * @license     MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @since       PHP 5.3
+ * @version     1.0
+ * @package     LITC\VideoPlayerBundle
+ * @subpackage  Model
  */
 interface VideoInterface
 {

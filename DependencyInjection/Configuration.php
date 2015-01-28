@@ -53,6 +53,29 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('use_title_form_type')->defaultTrue()->end()
             ->end();
 
+        $this->addVideoSection($rootNode);
+        
         return $treeBuilder;
+    }
+    
+    private function addVideoSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('video')
+                    ->addDefaultsIfNotSet()
+                    ->canBeUnset()
+                    ->children()
+                        ->arrayNode('form')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->scalarNode('type')->defaultValue('litc_video_player_profile')->end()
+                                ->scalarNode('handler')->defaultValue('litc_video_player.profile.form.handler.default')->end()
+                                ->scalarNode('name')->defaultValue('litc_video_player_profile_form')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
     }
 }

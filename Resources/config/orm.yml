@@ -1,10 +1,14 @@
 services:
     litc_video_player.video_manager.default:
         class: LITC\VideoPlayerBundle\Doctrine\VideoManager
-        arguments: ["security.encoder_factory", "litc_video_player.entity_manager", "%litc_video_player.model.video.class%"]
+        arguments: 
+            - "security.encoder_factory"
+            - "litc_video_player.entity_manager"
+            - "%litc_video_player.model.video.class%"
 
     litc_video_player.entity_manager:
         factory-service: doctrine
         factory-method: getManager
         class: Doctrine\ORM\EntityManager
-        arguments: ["%litc_video_player.model_manager_name%"]
+        arguments: 
+            - "%litc_video_player.model_manager_name%"

@@ -1,0 +1,14 @@
+# Video
+video:
+    show:
+        title: Titre
+        server: Server
+        videoId: Id vidéo
+    edit:
+        url: Url 
+        submit: Mettre à jour
+    flash:
+        updated: La vidéo a été mis à jour
+        remove: 
+        
+

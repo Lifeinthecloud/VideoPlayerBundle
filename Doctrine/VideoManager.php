@@ -14,11 +14,17 @@ namespace LITC\VideoPlayerBundle\Doctrine;
 use Doctrine\Common\Persistence\ObjectManager;
 use LITC\VideoPlayerBundle\Model\VideoInterface;
 use LITC\VideoPlayerBundle\Model\VideoManager as BaseVideoManager;
-use LITC\VideoPlayerBundle\Util\CanonicalizerInterface;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 
 /**
- * @author Antoine DARCHE <antoine.darche@gmail.com>
+ * @author      Antoine DARCHE <antoine.darche@gmail.com>
+ * @copyright   Copyright (c) 2015 Lifeinthecloud.
+ * @link        https://github.com/Lifeinthecloud/VideoPlayerBundle
+ * @license     MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @since       PHP 5.3
+ * @version     1.0
+ * @package     LITC\VideoPlayerBundle
+ * @subpackage  Doctrine
  */
 class VideoManager extends BaseVideoManager
 {
@@ -30,7 +36,6 @@ class VideoManager extends BaseVideoManager
      * Constructor.
      *
      * @param EncoderFactoryInterface $encoderFactory
-     * @param CanonicalizerInterface  $videoCanonicalizer
      * @param ObjectManager           $om
      * @param string                  $class
      */
@@ -95,7 +100,6 @@ class VideoManager extends BaseVideoManager
     public function updateVideo(VideoInterface $video, $andFlush = true)
     {
         $this->updateCanonicalFields($video);
-        $this->updatePassword($video);
 
         $this->objectManager->persist($video);
         if ($andFlush) {
