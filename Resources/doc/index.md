@@ -1,9 +1,9 @@
-Getting Started With VideoPlayerBundle
+Getting Started With LITCVideoPlayerBundle
 ======================================
 
 The Symfony2 component provides a flexible security framework that
 allows you to load videos from configuration, a database, or anywhere else
-you can imagine. The VideoPlayerBundle builds on top of this to make itquick
+you can imagine. The LITCVideoPlayerBundle builds on top of this to make it quick
 and easy to store data for reading videos Youtube, Vimeo or Dailymotion.
 
 So, if you need to persist and fetch the videos's data in your system to
@@ -32,15 +32,15 @@ For more information about translations, check [Symfony documentation](http://sy
 
 Installation is a quick (I promise!) 7 step process:
 
-1. Download VideoPlayerBundle using composer
+1. Download LITCVideoPlayerBundle using composer
 2. Enable the Bundle
 3. Create your Video class
-4. Configure the VideoPlayerBundle
+4. Configure the LITCVideoPlayerBundle
 5. Update your database schema
 
-### Step 1: Download VideoPlayerBundle using composer
+### Step 1: Download LITCVideoPlayerBundle using composer
 
-Add VideoPlayerBundle by running the command:
+Add LITCVideoPlayerBundle by running the command:
 
 ``` bash
 $ php composer.phar require litc/video-player-bundle "dev-master"
@@ -182,7 +182,7 @@ Acme\VideoBundle\Entity\Video:
 ```
 
 
-### Step 4: Configure the VideoPlayerBundle
+### Step 4: Configure the LITCVideoPlayerBundle
 
 The next step is to configure the bundle to work with the specific needs of
 your application.
