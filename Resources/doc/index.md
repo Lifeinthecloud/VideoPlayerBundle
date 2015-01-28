@@ -208,13 +208,3 @@ For ORM run the following command.
 ``` bash
 $ php app/console doctrine:schema:update --force
 ```
-
-### Next Steps
-
-Now that you have completed the basic installation and configuration of the
-LITCVideoPlayerBundle, you are ready to learn about more advanced features and usages
-of the bundle.
-
-The following documents are available:
-
-- [The video Form Type](type_forms.md)

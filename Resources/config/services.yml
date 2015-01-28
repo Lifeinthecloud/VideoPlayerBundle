@@ -3,3 +3,9 @@ services:
         class: LITC\VideoPlayerBundle\Service\VideoPlayerService
     litc_video_player.parser_service:
         class: LITC\VideoPlayerBundle\Service\ParserService
+
+    litc_video_player.twig.video_player_extension:
+        class: LITC\VideoPlayerBundle\Twig\VideoPlayerExtension
+        arguments: ["@litc_video_player.video_player_service"]
+        tags:
+            - { name: twig.extension }

@@ -12,8 +12,8 @@ use LITC\VideoPlayerBundle\Server\AbstractServer;
  * @license     http://gnu.org/licenses/gpl.txt GNU GPL
  * @since       PHP 5
  * @version     1.0
- * @package     LITC\VideoPlayer
- * @subpackage  Server
+ * @package     LITC\VideoPlayer\Server
+ * @subpackage  DailymotionServer
  */
 
 class DailymotionServer extends AbstractServer {
