@@ -16,6 +16,7 @@ use LITC\VideoPlayerBundle\Server\ListServer;
 
 /**
  * Class VideoPlayerServiceTest
+ * 
  * @author Antoine DARCHE <darche.antoine@gmail.com>
  * @version 1.0
  * @package LITC\VideoPlayerBundle\Tests\Service
@@ -23,7 +24,7 @@ use LITC\VideoPlayerBundle\Server\ListServer;
 class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
 {
     /* @var VideoPlayerService */
-    private $videoPlayerService = null;
+    private static $videoPlayerService = null;
 
     /* @var array default youtube configuration */
     private static $defaultYoutubeSettings = array(
@@ -53,16 +54,6 @@ class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
     );
 
     /**
-     * Initialize VideoPlayerService
-     *
-     * @author Antoine DARCHE <darche.antoine@gmail.com>
-     */
-    public function __construct()
-    {
-        $this->videoPlayerService = new VideoPlayerService();
-    }
-
-    /**
      * Initialize tests
      *
      * @author Antoine DARCHE <darche.antoine@gmail.com>
@@ -71,6 +62,10 @@ class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
+        
+        // Initialize service VideoPlayerService
+        self::$videoPlayerService = new VideoPlayerService();
+        
         // Initialize default server
         self::setDefaultVideoServer(self::$defaultYoutubeSettings, 'Youtube');
         self::setDefaultVideoServer(self::$defaultVimeoSettings, 'Vimeo');
@@ -111,10 +106,10 @@ class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPlayYoutubeVideo()
     {
-        $videoHtml = $this->videoPlayerService
+        $videoHtml = self::$videoPlayerService
             ->play(self::$defaultYoutubeSettings);
         
-	    $this->assertNotNull($videoHtml);
+	$this->assertNotNull($videoHtml);
     }
 
     /**
@@ -124,10 +119,10 @@ class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPlayVimeoVideo()
     {
-        $videoHtml = $this->videoPlayerService
+        $videoHtml = self::$videoPlayerService
             ->play(self::$defaultVimeoSettings);
 
-	    $this->assertNotNull($videoHtml);
+	$this->assertNotNull($videoHtml);
     }
 
     /**
@@ -137,10 +132,10 @@ class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPlayDailymotionVideo()
     {
-        $videoHtml = $this->videoPlayerService
+        $videoHtml = self::$videoPlayerService
             ->play(self::$defaultDailymotionSettings);
 
-	    $this->assertNotNull($videoHtml);
+	$this->assertNotNull($videoHtml);
     }
 
     /**
@@ -150,12 +145,11 @@ class VideoPlayerServiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testToString()
     {
-        $this->videoPlayerService
+        self::$videoPlayerService
             ->setParameters(self::$defaultYoutubeSettings);
 
-        $videoHtml = $this->videoPlayerService
-            ->__tostring();
+        $videoHtml = self::$videoPlayerService->__tostring();
 
-	    $this->assertNotNull($videoHtml);
+	$this->assertNotNull($videoHtml);
     }
 }

@@ -17,6 +17,7 @@ use LITC\VideoPlayerBundle\Server\ListServer;
 
 /**
  * Class ParserServiceTest
+ * 
  * @author Antoine DARCHE <darche.antoine@gmail.com>
  * @version 1.0
  * @package LITC\VideoPlayerBundle\Tests\Service
