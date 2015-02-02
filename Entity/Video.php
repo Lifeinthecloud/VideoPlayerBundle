@@ -23,6 +23,6 @@ use LITC\VideoPlayerBundle\Model\Video as AbstractVideo;
  * @package     LITC\VideoPlayerBundle
  * @subpackage  Entity
  */
-abstract class Video implements AbstractVideo
+abstract class Video extends AbstractVideo
 {
 }

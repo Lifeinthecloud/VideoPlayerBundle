@@ -155,7 +155,7 @@ If you use yml to configure Doctrine you must add two files. The Entity and the 
 
 namespace Acme\VideoBundle\Entity;
 
-use LITC\VideoPlayerBundle\Model\Video as BaseVideo;
+use LITC\VideoPlayerBundle\Entity\Video as BaseVideo;
 
 /**
  * Video

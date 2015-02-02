@@ -1,6 +1,6 @@
 litc_video_add:
     path:   /admin/medias/video/add/
-    defaults: { _controller: LITCVideoPlayerBundle:Videos:add }
+    defaults: { _controller: LITCVideoPlayerBundle:Videos:edit }
 
 litc_video_delete:
     path:   /admin/medias/video/delete/{idVideo}/

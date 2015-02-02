@@ -2,18 +2,15 @@
 
 namespace LITC\VideoPlayerBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-
-use LITC\VideoPlayerBundle\Entity\Video;
-use LITC\VideoPlayerBundle\Form\VideoType;
-use LITC\VideoPlayerBundle\Entity\VideoManager;
+use Symfony\Component\DependencyInjection\ContainerAware;
+use LITC\VideoPlayerBundle\Model\VideoInterface;
 
 /**
  * Description of LogosController
  *
  * @author 
  */
-class MediasController extends AbstractAdminController
+class VideosController extends ContainerAware
 {
 
     public function listMediasAction(Request $request, $idPf)
@@ -26,16 +23,16 @@ class MediasController extends AbstractAdminController
      * @param Request $request
      * @return type
      */
-    public function editAction(Request $request, $videoId=null)
+    public function editAction($videoId=null)
     {
         $videoManager = $this->container->get('litc_video_player.video_manager');
-        
+
         if(!empty($videoId)) {
             $video = $videoManager->findVideoBy(array('id' => $videoId));
         } else {
             $video = $videoManager->createVideo();
         }
-        
+
         if (!is_object($video) || !$video instanceof VideoInterface) {
             throw new \Exception('This is not a video object.');
         }
@@ -79,7 +76,7 @@ class MediasController extends AbstractAdminController
     /**
      * Generate the redirection url when editing is completed.
      *
-     * @param LITC\VideoPlayerBundle\Model\VideoInterface $video
+     * @param VideoInterface $video
      *
      * @return string
      */
